@@ -7,16 +7,19 @@ while [ "$choice" != "q" ]
 	echo 'How do you want to list all services?:'
 	echo 'A. active services'
 	echo 'B. inactive services'
+	echo 'S. search service'
         echo 'Your choice:';read choice
 	if [ "$choice" = "q" ]; then   # press q to quit
                 echo 'Bye!'
                 exit 0
         fi
-	if [ -z "$choice" ]; then  # if user presses nothing
-		echo 'No response. Try again.'
-	fi
 
-	if [ "$choice" = "a" ] || [ "$choice" = "A" ]; then
+	if [ "$choice" = "s" ] || [ "$choice" = "S" ]; then
+		echo 'Enter search keyword:'
+		read searchkeyword
+		systemctl list-units --all --type=service | grep $searchkeyword
+		
+	elif [ "$choice" = "a" ] || [ "$choice" = "A" ]; then
 		systemctl list-units --all --type=service | grep -w 'active' #grep -w means search exactly for active and not include in(active) too
 
 	elif [ "$choice" = "b" ] || [ "$choice" = "B" ]; then
