@@ -3,20 +3,38 @@
 choice="idk" #choice filled with random string
 
 while [ "$choice" != "q" ]
- do
-	echo 'How do you want to list all services?:'
+ do     
+	echo 'FORSYSTEMDv1.2'
+	echo '------------------------------------------------------------------'
+	echo 'Systemctl Tasks:'
+	echo '------------------------------------------------------------------'
 	echo 'A. active services'
 	echo 'B. inactive services'
 	echo 'S. search service'
+	echo ''
+	echo '------------------------------------------------------------------'
+        echo 'Journalctl Tasks:'        
+	echo '------------------------------------------------------------------'
+        echo 'L. check log of a service'
+	echo ''
+	echo '------------------------------------------------------------------'
+	echo 'Other:'
+	echo '------------------------------------------------------------------'
 	echo 'C. clear terminal'
 	echo 'q. press q to quit'
+	echo '' 
         echo 'Your choice:';read choice
 	if [ "$choice" = "q" ]; then   # press q to quit
                 echo 'Bye!'
                 exit 0
         fi
         
-	if [ "$choice" = "c" ] || [ "$choice" = "C" ]; then
+	if [ "$choice" = "l" ] || [ "$choice" = "L" ]; then
+		echo 'WARNING: Please search service before checking log of service, the names need to be exact!!!'
+		echo 'Enter the exact service name:'
+		read logservice
+		journalctl -u $logservice
+	elif [ "$choice" = "c" ] || [ "$choice" = "C" ]; then
 		clear
 	elif [ "$choice" = "s" ] || [ "$choice" = "S" ]; then
 		echo 'Enter search keyword:'
