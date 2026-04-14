@@ -1,0 +1,8 @@
+Immediately:
+	- Check users and lock them down if necessary.
+	- harden services to get points
+	
+Periodically:
+	- Check services.
+	- Check logs.
+	- monitor for attackers
