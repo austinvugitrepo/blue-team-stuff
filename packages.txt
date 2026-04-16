@@ -1,3 +1,6 @@
 tmux
 nmap
-netcat
+tcpdump
+netstat
+fail2ban
+rsyslog
