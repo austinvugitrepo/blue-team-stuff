@@ -1,6 +1,6 @@
 tmux
 nmap
 tcpdump
-netstat
-fail2ban
 rsyslog
+openssl
+
