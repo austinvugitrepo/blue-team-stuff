@@ -1,0 +1,5 @@
+TODO:
+- portable signify for Linux boxes
+- clean copy of sshd_config
+- another clean copy of sshd_config but modified for security
+
