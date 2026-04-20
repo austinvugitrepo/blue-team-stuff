@@ -2,4 +2,5 @@ TODO:
 - portable signify for Linux boxes
 - clean copy of sshd_config
 - another clean copy of sshd_config but modified for security
-
+- add busybox for coreutils
+- add ksh maybe csh for primary shell

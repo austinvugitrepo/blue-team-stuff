@@ -3,4 +3,6 @@ nmap
 tcpdump
 rsyslog
 openssl
-
+ksh
+csh
+busybox
